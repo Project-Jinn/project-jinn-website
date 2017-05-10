@@ -1,0 +1,181 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+
+/*Header*/
+
+.header-up {
+  width: 100%;
+  height: 300px;
+  background: url("/images/background.jpg");
+  background-size: cover;
+  background-position: 0;
+  background-attachment: fixed;
+}
+
+.header-down {
+  padding-top: 60px;
+  text-align: center;
+  overflow: hidden;
+  width: 100%;
+  height: 300px;
+  margin-top: -300px;
+  background: rgba(0, 135, 92, 0.5);
+}
+
+.header-down h1 {
+  color: white;
+  font-weight: bold;
+  font-size: 50px;
+}
+
+.header-logo {
+  height: 90px;
+  margin-top: -4px;
+  margin-left: -10px;
+  margin-right: -10px;
+}
+
+.header-down p {
+  margin-top: -10px;
+  color: white;
+  font-size: 24px;
+}
+
+
+/* Home Project Section*/
+
+.about-projects {
+  margin-top: 60px;
+  padding-top: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+}
+
+.about-desc {
+  margin-top: 60px;
+  margin-bottom: 20px;
+  padding-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.about-desc h5 {
+  line-height: 20px;
+  margin: 0;
+  font-size: 28px;
+  text-transform: uppercase;
+}
+
+.about-desc p {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;;
+  line-height: 30px;
+  font-size: 18px;
+}
+
+hr.botm-line {
+  height: 3px;
+  width: 200px;
+  background: #329f7c;
+  position: relative;
+  margin: 20px 0 20px 0;
+  margin-left: auto;
+  margin-right: auto;
+  border: 0;
+}
+
+.project-box {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  text-align: center;;
+}
+
+.project-box p {
+  font-size: 18px;
+}
+
+.project-icon {
+  font-size: 40px;
+  color: #329f7c;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.about-img {
+  height: 475px;
+  width: 100%;
+}
+
+.about-us {
+  background-color: #ededed;
+  margin-top: 60px;
+  padding-top: 40px;
+  padding-bottom: 30px;
+  margin-bottom: 15px;
+  overflow: hidden;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+.about-us h5 {
+  line-height: 20px;
+  margin: 0;
+  font-size: 28px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.about-us p {
+  font-size: 18px;
+  line-height: 33px;
+}
+
+.inner-about {
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.inner-desc {
+  margin-top: 20px;
+}
+
+/*Navbar*/
+
+#sidebar-wrapper {
+  background-color: #329f7c !important;
+}
+
+.sidebar-brand a {
+  font-weight: bold;
+  font-size: 20px !important;
+  margin-bottom: 15px;
+}
+
+#sidebar-wrapper a {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  color: white;
+  font-size: 18px;
+}
+
+#menu-close {
+  color: #999999 !important;
+}
+
+#nav-logo {
+  margin-top: -5px;
+  margin-left: -3px;
+  height: 35px;
+}
