@@ -6,8 +6,6 @@ body {
 * {
   box-sizing: border-box;
 }
-
-
 /*Header*/
 
 .header-up {
@@ -122,8 +120,7 @@ hr.botm-line {
   margin-top: 60px;
   padding-top: 40px;
   padding-bottom: 30px;
-  margin-bottom: 15px;
-  overflow: hidden;
+  overflow: hi`dden;
   padding-left: 10%;
   padding-right: 10%;
 }
@@ -178,4 +175,52 @@ hr.botm-line {
   margin-top: -5px;
   margin-left: -3px;
   height: 35px;
+}
+
+.more-button {
+  margin-top: 5px;
+  background-color: #329f7c;
+  color: white;
+  text-transform: uppercase;
+  font-size: 15px;
+  transition: all 0.5s ease;
+}
+
+.more-button:hover {
+  background-color: white;
+  color: #329f7c;
+  border-color: #329f7c;
+}
+
+
+/*Footer*/
+footer {
+  background: #555555;
+  color: white;
+  padding-top: 40px;
+  padding-bottom: 13px;
+  color: white;
+  text-align: center;
+}
+
+.footer-logo {
+  margin-top: -5px;
+  margin-left: -3px;
+  height:35px;
+}
+
+footer p {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-size: 17px;
+}
+
+footer a {
+  color: white;
+  transition: all 0.5s ease;
+}
+
+footer a:hover {
+  color: #329f7c;
+  text-decoration: none;
 }
