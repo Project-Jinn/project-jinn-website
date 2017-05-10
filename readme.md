@@ -1,4 +1,4 @@
-<h3>Art Auto Project</h3>
+<h3>Project Jinn</h3>
 <p>
-Web app/python scrapper that will take the frame data from xlsx to web app
+Helping one person at a time
 </p>
