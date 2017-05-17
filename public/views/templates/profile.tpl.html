@@ -1,0 +1,46 @@
+<header class="header-up">
+</header>
+<div class="header-down">
+  <div class="header-inner">
+    <h1>Project <img class="header-logo" src="/images/jinn.png"> Jinn</h1>
+    <p>Helping one person at a time</p>
+  </div>
+</div>
+<section class="container case-large">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="profile-image-small" style="background: url('{{profile.img}}'); background-size: cover; background-position: center;
+      background-repeat: none;">
+        <div class="share-area">
+          <a class="share" target="_blank" ng-href="{{profile.github}}">
+            <i class="fa fa-github" aria-hidden="true"></i>
+          </a>
+          <a class="share" target="_blank" ng-href="{{profile.cv}}">
+            <i class="fa fa-file-text-o" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+      <a class="more-button-large btn form-control" ng-href="mailto:{{profile.email}}">Contact</a>
+
+    </div>
+    <div class="col-md-6">
+      <h3 class="profile-name">{{profile.name}}</h3>
+      <p class="profile-desc-large">{{profile.desc}}</p>
+    </div>
+  </div>
+</section>
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <p><a href="https://www.apache.org/licenses/LICENSE-2.0" target="_blank"><i class="fa fa-copyright" aria-hidden="true"></i> Copyright 2017 Apache 2.0</a></p>
+      </div>
+      <div class="col-md-4">
+        <p><img class="footer-logo" src="/images/nav-logo.png"></p>
+      </div>
+      <div class="col-md-4">
+        <p><a href="https://github.com/Project-Jinn/project-jinn-website" target="_blank"><i class="fa fa-github" aria-hidden="true"></i> Source Code</p>
+      </div>
+    </div>
+  </div>
+</footer>
