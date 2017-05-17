@@ -5,4 +5,8 @@ baseRoute.get("/", function(req, res) {
   res.render("index.html");
 });
 
+baseRoute.get("/manage", function(req, res) {
+  res.render("admin.html");
+});
+
 module.exports = baseRoute;
