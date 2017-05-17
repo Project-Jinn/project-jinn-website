@@ -7,9 +7,11 @@ body {
   box-sizing: border-box;
 }
 
+section {
+  overflow: hidden;
+}
 
 /*Header*/
-
 .header-up {
   width: 100%;
   height: 300px;
@@ -48,9 +50,7 @@ body {
   font-size: 24px;
 }
 
-
-/* Home Project Section*/
-
+/* Home*/
 .about-projects {
   margin-top: 60px;
   padding-top: 5px;
@@ -122,8 +122,7 @@ hr.botm-line {
   margin-top: 60px;
   padding-top: 40px;
   padding-bottom: 30px;
-  margin-bottom: 15px;
-  overflow: hidden;
+  overflow: hi`dden;
   padding-left: 10%;
   padding-right: 10%;
 }
@@ -152,7 +151,6 @@ hr.botm-line {
 }
 
 /*Navbar*/
-
 #sidebar-wrapper {
   background-color: #329f7c !important;
 }
@@ -178,4 +176,229 @@ hr.botm-line {
   margin-top: -5px;
   margin-left: -3px;
   height: 35px;
+}
+
+.more-button {
+  margin-top: 5px;
+  background-color: #329f7c;
+  color: white;
+  text-transform: uppercase;
+  font-size: 15px;
+  transition: all 0.5s ease;
+}
+
+.more-button:hover {
+  background-color: white;
+  color: #329f7c;
+  border-color: #329f7c;
+}
+
+/*Medical Cases*/
+.donate-box {
+  border: 1px solid #ddd;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.fundme-image {
+  width: 100%;
+  height: 200px;
+  text-align: center;
+  border-radius: 0px;
+  padding: 0px;
+}
+
+.btn-area-fundme {
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+.fundme-desc {
+  text-align: center;
+  padding: 5px;
+}
+
+/*Case*/
+.fundme-image-large {
+  width: 100%;
+  height: 500px;
+  text-align: center;
+  border-radius: 0px;
+  padding: 0px;
+  margin-top: 20px;
+  position: relative;
+}
+
+.case-large {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.fundme-desc-large h3 {
+  text-align: center;
+  font-size: 26px;
+  color:  #329f7c;
+}
+
+.fundme-desc-large p {
+  font-size: 18px;
+  line-height: 33px;
+}
+
+.more-button-large {
+  margin-top: 5px;
+  background-color: #329f7c;
+  color: white;
+  text-transform: uppercase;
+  font-size: 18px !important;
+  transition: all 0.5s ease;
+  font-weight: bolder;
+  margin-bottom: 20px;
+}
+
+.more-button-large:hover {
+  background-color: white;
+  color: #329f7c;
+  border-color: #329f7c;
+}
+
+.desc-box {
+  height: 500px;
+  overflow-y: auto;
+}
+
+.share-area {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.share {
+  display: inline-block;
+  background-color: #329f7c;
+  padding: 7px 12px;
+  font-size: 20px;
+  color: white;
+
+}
+
+.share:hover {
+  text-decoration: none;
+  color: #98cfbd;
+}
+
+/*Profiles*/
+.profile-box {
+  border: 1px solid #ddd;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.profile-image {
+  width: 100%;
+  height: 200px;
+  text-align: center;
+  border-radius: 0px;
+  padding: 0px;
+}
+
+.profile-desc {
+  text-align: center;
+  padding: 5px;
+}
+
+.btn-area-profile {
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+/*Profile*/
+.profile-image-small {
+  width: 100%;
+  height: 500px;
+  text-align: center;
+  border-radius: 0px;
+  padding: 0px;
+  margin-top: 20px;
+  position: relative;
+}
+
+.profile-name {
+  text-align: center;
+  font-size: 30px;
+  color: #329f7c;
+}
+
+.btn-area-profile-center {
+  text-align: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.profile-desc-large {
+  height: 500px;
+  overflow-y: auto;
+  line-height: 30px;
+  font-size: 18px;
+}
+
+/*Stories*/
+.stories-area {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+  margin-bottom: 40px;
+}
+
+.story-type {
+  font-size: 17px;
+}
+
+.story-desc {
+  font-size: 20px;
+}
+
+.type {
+  text-transform: capitalize;
+}
+
+.story-title {
+  font-size: 39px;
+}
+
+.story-info {
+  font-style: italic;
+}
+
+/*Footer*/
+footer {
+  background: #555555;
+  color: white;
+  padding-top: 40px;
+  padding-bottom: 13px;
+  color: white;
+  text-align: center;
+}
+
+.footer-logo {
+  margin-top: -5px;
+  margin-left: -3px;
+  height:35px;
+}
+
+footer p {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-size: 17px;
+}
+
+footer a {
+  color: white;
+  transition: all 0.5s ease;
+}
+
+footer a:hover {
+  color: #329f7c;
+  text-decoration: none;
 }
