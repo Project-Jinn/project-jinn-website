@@ -338,6 +338,35 @@ hr.botm-line {
   font-size: 18px;
 }
 
+/*Stories*/
+.stories-area {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+  margin-bottom: 40px;
+}
+
+.story-type {
+  font-size: 17px;
+}
+
+.story-desc {
+  font-size: 20px;
+}
+
+.type {
+  text-transform: capitalize;
+}
+
+.story-title {
+  font-size: 39px;
+}
+
+.story-info {
+  font-style: italic;
+}
+
 /*Footer*/
 footer {
   background: #555555;
