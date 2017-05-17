@@ -3,7 +3,7 @@ var app = angular.module("app.home", ["apiModule", "ngRoute"]);
 app.config(function($locationProvider, $routeProvider) {
   $locationProvider.hashPrefix("");
   $routeProvider.when("/home", {
-    templateUrl: "/views/home.tpl.html",
+    templateUrl: "/views/templates/home.tpl.html",
     controller: "homeCtrl"
   });
 });

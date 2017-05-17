@@ -2,7 +2,7 @@ var app = angular.module("app.signin", ["ngRoute", "authModule", "tokenModule", 
 
 app.config(function($routeProvider) {
   $routeProvider.when("/signin", {
-    templateUrl: "/views/signin.tpl.html",
+    templateUrl: "/views/templates/signin.tpl.html",
     controller: "signinCtrl"
   });
 });
