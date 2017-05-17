@@ -7,6 +7,10 @@ body {
   box-sizing: border-box;
 }
 
+section {
+  overflow: hidden;
+}
+
 /*Header*/
 .header-up {
   width: 100%;
