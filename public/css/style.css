@@ -6,8 +6,8 @@ body {
 * {
   box-sizing: border-box;
 }
-/*Header*/
 
+/*Header*/
 .header-up {
   width: 100%;
   height: 300px;
@@ -46,9 +46,7 @@ body {
   font-size: 24px;
 }
 
-
-/* Home Project Section*/
-
+/* Home*/
 .about-projects {
   margin-top: 60px;
   padding-top: 5px;
@@ -149,7 +147,6 @@ hr.botm-line {
 }
 
 /*Navbar*/
-
 #sidebar-wrapper {
   background-color: #329f7c !important;
 }
@@ -218,7 +215,6 @@ hr.botm-line {
 }
 
 /*Case*/
-
 .fundme-image-large {
   width: 100%;
   height: 500px;
@@ -285,6 +281,61 @@ hr.botm-line {
 .share:hover {
   text-decoration: none;
   color: #98cfbd;
+}
+
+/*Profiles*/
+.profile-box {
+  border: 1px solid #ddd;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.profile-image {
+  width: 100%;
+  height: 200px;
+  text-align: center;
+  border-radius: 0px;
+  padding: 0px;
+}
+
+.profile-desc {
+  text-align: center;
+  padding: 5px;
+}
+
+.btn-area-profile {
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+/*Profile*/
+.profile-image-small {
+  width: 100%;
+  height: 500px;
+  text-align: center;
+  border-radius: 0px;
+  padding: 0px;
+  margin-top: 20px;
+  position: relative;
+}
+
+.profile-name {
+  text-align: center;
+  font-size: 30px;
+  color: #329f7c;
+}
+
+.btn-area-profile-center {
+  text-align: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.profile-desc-large {
+  height: 500px;
+  overflow-y: auto;
+  line-height: 30px;
+  font-size: 18px;
 }
 
 /*Footer*/

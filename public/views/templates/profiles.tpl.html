@@ -1,0 +1,43 @@
+<header class="header-up">
+</header>
+<div class="header-down">
+  <div class="header-inner">
+    <h1>Project <img class="header-logo" src="/images/jinn.png"> Jinn</h1>
+    <p>Helping one person at a time</p>
+  </div>
+</div>
+<section class="container">
+  <div class="row">
+    <div ng-repeat="profile in profiles track by $index">
+      <div class="col-md-4 col-sm-6 col-sx-6">
+        <div class="profile-box">
+          <div class="profile-image" style="background: url('{{profile.img}}'); background-size: cover; background-position: center;
+          background-repeat: none;"> </div>
+          <div class="profile-desc">
+            <h3>{{profile.name}}</h3>
+            <p>{{excerpt(profile.desc)}}</p>
+          </div>
+          <div class="btn-area-profile">
+            <a ng-href="#/profile/{{profile._id}}" class="more-button btn">Read More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <p><a href="https://www.apache.org/licenses/LICENSE-2.0" target="_blank"><i class="fa fa-copyright" aria-hidden="true"></i> Copyright 2017 Apache 2.0</a></p>
+      </div>
+      <div class="col-md-4">
+        <p><img class="footer-logo" src="/images/nav-logo.png"></p>
+      </div>
+      <div class="col-md-4">
+        <p><a href="https://github.com/Project-Jinn/project-jinn-website" target="_blank"><i class="fa fa-github" aria-hidden="true"></i> Source Code</p>
+      </div>
+    </div>
+  </div>
+</footer>
