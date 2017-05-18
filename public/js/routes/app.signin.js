@@ -18,7 +18,7 @@ app.controller("signinCtrl", function($scope, authSerivce, TokenService, PrivSer
     authSerivce.signin(data).then(function(response) {
       TokenService.save(response.data.token);
       PrivService.save(response.data.priv);
-      $location.path("/home")
+      $location.path("/manage")
       $scope.userinput = {};
     }, function(response) {
       console.log(response.status);

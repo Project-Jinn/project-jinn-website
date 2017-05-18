@@ -1,0 +1,41 @@
+<div class="modal-header">
+  <h3>Add New Developer Profile</h3>
+</div>
+<form name="form.userForm" ng-submit="submitForm()" novalidate>
+  <div class="modal-body">
+    <!-- Name -->
+    <div class="form-group">
+      <label>Name</label>
+      <input type="text" name="name" class="form-control" ng-model="form.name">
+    </div>
+
+    <!-- Image -->
+    <div class="form-group">
+      <label>Image</label>
+      <input type="text" name="username" class="form-control" ng-model="form.img">
+    </div>
+
+    <!-- Github -->
+    <div class="form-group">
+      <label>Github URL</label>
+      <input type="text" name="github" class="form-control" ng-model="form.github">
+    </div>
+
+    <!-- CV -->
+    <div class="form-group">
+      <label>CV URL</label>
+      <input type="text" name="cv" class="form-control" ng-model="form.cv">
+    </div>
+
+    <!-- Description -->
+    <div class="form-group">
+      <label>Description</label>
+      <textarea name="email" class="form-control" ng-model="form.desc">
+      </textarea>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button type="submit" class="btn btn-primary">Submit</button>
+    <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+  </div>
+</form>

@@ -3,6 +3,10 @@ var adminRouter = express.Router();
 
 //import models
 var User = require("../models/user.js");
+var NewUser = require("../models/newUserQue.js");
+var Case = require("../models/medical-case.js");
+var Dev = require("../models/dev-pro.js");
+
 
 adminRouter.get("/newusers", function(req, res) {
   NewUser.find({}, function(err, data) {
@@ -110,14 +114,106 @@ adminRouter.delete("/user/:id", function(req, res) {
   });
 });
 
-adminRouter.get("/records", function(req, res) {
-  Record.find({}, function(err, data) {
-    if (err) {
-      res.status(500).send({"message": "Err", err: err});
+adminRouter.post("/medical-cases", function(req, res) {
+  var newCase = new Case(req.body);
+  newCase.save(function(err, data) {
+    if(err) {
+      res.status(500).send(err);
     } else {
-      res.status(200).send(data);
+      res.status(200).send({"message": "Data added", data: data});
     }
   });
 });
+
+adminRouter.put("/medical-cases/:id", function(req, res) {
+  Case.findOne({_id: req.params.id}, function(err, data) {
+    if(err) {
+      res.status(500).send(err);
+    } else if(data) {
+      for(key in req.query) {
+        data[key] = req.query[key];
+      }
+      data.save(function(err, data) {
+        if(err) {
+          res.status(500).send(err);
+        } else {
+          res.status(200).send({"message": "Data updated", data: data});
+        }
+      });
+    } else {
+      res.status(400).send({"message": "No item with id found"});
+    }
+  });
+});
+
+adminRouter.delete("/medical-cases/:id", function(req, res) {
+  Case.findOne({_id: req.params.id}, function(err, data) {
+    if(err) {
+      res.status(500).send(err);
+    } else if(data) {
+      data.remove(function(err, data) {
+        if(err) {
+          res.status(500).send(err);
+        } else {
+          res.status(200).send({"message": "Item removed", data: data});
+        }
+      })
+    } else {
+      res.status(400).send({"message": "No item with id found"});
+    }
+  });
+});
+
+
+adminRouter.post("/developer-profiles", function(req, res) {
+  var newDev = new Dev(req.body);
+  newDev.save(function(err, data) {
+    if(err) {
+      res.status(500).send(err);
+    } else {
+      res.status(200).send({"message": "Data added", data: data});
+    }
+  });
+});
+
+adminRouter.put("/developer-profiles/:id", function(req, res) {
+  Dev.findOne({_id: req.params.id}, function(err, data) {
+    if(err) {
+      res.status(500).send(err);
+    } else if(data) {
+      for(key in req.query) {
+        data[key] = req.query[key];
+      }
+      data.save(function(err, data) {
+        if(err) {
+          res.status(500).send(err);
+        } else {
+          res.status(200).send({"message": "Data updated", data: data});
+        }
+      });
+    } else {
+      res.status(400).send({"message": "No item with id found"});
+    }
+  });
+});
+
+adminRouter.delete("/developer-profiles/:id", function(req, res) {
+  Case.findOne({_id: req.params.id}, function(err, data) {
+    if(err) {
+      res.status(500).send(err);
+    } else if(data) {
+      data.remove(function(err, data) {
+        if(err) {
+          res.status(500).send(err);
+        } else {
+          res.status(200).send({"message": "Item removed", data: data});
+        }
+      })
+    } else {
+      res.status(400).send({"message": "No item with id found"});
+    }
+  });
+});
+
 
 module.exports = adminRouter;
