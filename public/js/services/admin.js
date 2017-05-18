@@ -36,7 +36,6 @@ app.service("adminRequests", function($http, web) {
     return $http.get(web.host + "api/developer-profiles");
   };
   this.addNewPro = function(data) {
-    console.log("Here is the data", data);
     return $http.post(web.host + "admin/developer-profiles", data);
   };
   this.updatePro = function(id, data) {
@@ -48,5 +47,21 @@ app.service("adminRequests", function($http, web) {
   }
   this.deletePro = function(id) {
     return $http.delete(web.host + "admin/developer-profiles/" + id);
+  };
+  this.getStories = function() {
+    return $http.get(web.host + "api/stories");
+  };
+  this.addNewStory = function(data) {
+    return $http.post(web.host + "admin/stories", data);
+  };
+  this.updateStory = function(id, data) {
+    var query = "?";
+    for(key in data) {
+      query += key + "=" + data[key] + "&";
+    }
+    return $http.put(web.host + "admin/stories/" + id + query);
+  }
+  this.deleteStory = function(id) {
+    return $http.delete(web.host + "admin/stories/" + id);
   };
 });

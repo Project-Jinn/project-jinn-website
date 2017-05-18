@@ -23,6 +23,7 @@
                 <th>ID</th>
                 <th>Edit</th>
                 <th>Delete</th>
+                <th>Share</th>
               </tr>
             </thead>
             <tbody>
@@ -35,13 +36,16 @@
                 <td>
                   <button class="btn-side btn btn-danger" ng-click="removeCase(case)"><i class="fa fa-trash" aria-hidden="true"></i></button>
                 </td>
+                <td>
+                  <button class="btn-side btn btn-warning" ng-click="showShare(case)"><i class="fa fa-share" aria-hidden="true"></i></button>
+                </td>
               </tr>
             </tbody>
           </table>
         </div>
         <button class="btn-custom-large btn btn-primary back-button" ng-click="setSection('')">Back</button>
       </div>
-      <div class="cat-box" ng-if="section == 'developer-profiles'" ng-init="loadDevs()">
+      <div class="cat-box" ng-if="section == 'developer-profiles'" ng-init="loadPros()">
         <div class="row">
           <div class="col-md-12">
             <h2>Developer Profiles <button class="btn btn-primary btn-custom-right" ng-click="showForm('pro')"><i class="fa fa-plus" aria-hidden="true"></i></button></h2>
@@ -66,6 +70,38 @@
                 </td>
                 <td>
                   <button class="btn-side btn btn-danger" ng-click="removePro(pro)"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <button class="btn-custom-large btn btn-primary back-button" ng-click="setSection('')">Back</button>
+      </div>
+      <div class="cat-box" ng-if="section == 'stories'" ng-init="loadStories()">
+        <div class="row">
+          <div class="col-md-12">
+            <h2>Stories <button class="btn btn-primary btn-custom-right" ng-click="showForm('stories')"><i class="fa fa-plus" aria-hidden="true"></i></button></h2>
+          </div>
+        </div>
+        <div class="table-responsive table-users">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Title</th>
+                <th>ID</th>
+                <th>Edit</th>
+                <th>Delete</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr ng-repeat="story in stories">
+                <td class="username">{{story.title}}</td>
+                <td class="username">{{story._id}}</td>
+                <td>
+                  <button class="btn-side btn btn-warning" ng-click="showForm('stories-edit', story)"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+                </td>
+                <td>
+                  <button class="btn-side btn btn-danger" ng-click="removeStory(story)"><i class="fa fa-trash" aria-hidden="true"></i></button>
                 </td>
               </tr>
             </tbody>

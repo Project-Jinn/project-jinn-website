@@ -1,4 +1,4 @@
-var app = angular.module("app.manage", ["ngRoute", "adminModule", "ui.bootstrap"]);
+var app = angular.module("app.manage", ["ngRoute", "adminModule", "ui.bootstrap", "720kb.socialshare"]);
 
 app.config(function($locationProvider, $routeProvider) {
   $routeProvider.when("/manage", {
@@ -16,15 +16,17 @@ app.service("modalData", function() {
   this.setType = function(type) {
     this.type = type;
   };
-})
+});
 
 app.controller("manageCtrl", function($scope, adminRequests, $modal, $log, modalData) {
   var templates = {
     "case": "/views/templates/modals/case.tpl.html",
     "case-edit": "/views/templates/modals/case.tpl.html",
     "pro": "/views/templates/modals/dev.tpl.html",
-    "pro-edit": "/views/templates/modals/dev.tpl.html"
-  }
+    "pro-edit": "/views/templates/modals/dev.tpl.html",
+    "stories": "/views/templates/modals/story.tpl.html",
+    "stories-edit": "/views/templates/modals/story.tpl.html"
+  };
   $scope.showForm = function(type, item) {
     modalData.setData(item);
     modalData.setType(type);
@@ -41,19 +43,43 @@ app.controller("manageCtrl", function($scope, adminRequests, $modal, $log, modal
         $scope.loadCases();
       } else if (type == "case-edit") {
         $scope.loadCases();
-      } else if(type == "prop") {
-      }else {
+      } else if (type == "pro") {
+        $scope.loadPros();
+      } else if (type == "pro-edit") {
+        $scope.loadPros();
+      } else if (type == "stories") {
+        $scope.loadStories();
+      } else if (type == "stories-edit") {
+        $scope.loadStories();
+      } else {
         console.log("Case not found", type);
       }
     }, function() {
       $log.info("Modal dismissed at: " + new Date());
     });
   };
-  ///
+  $scope.showShare = function(data) {
+    modalData.setData(data);
+    var modalInstance = $modal.open({
+      templateUrl: "/views/templates/modals/share.tpl.html",
+      controller: ModalShareCtrl,
+      scope: $scope,
+      resolve: {
+        item: $scope.selectedItemInModal
+      }
+    });
+    modalInstance.result.then(function(selectedItem) {
+      console.log("Share completed")
+    }, function() {
+      $log.info("Modal dismissed at: " + new Date());
+    });
+  };
   $scope.section = "";
   $scope.newUsers = [];
   $scope.currentUsers = [];
   $scope.cases = [];
+  $scope.pros = [];
+  $scope.stories = [];
   $scope.setSection = function(section) {
     $scope.section = section;
   };
@@ -113,9 +139,31 @@ app.controller("manageCtrl", function($scope, adminRequests, $modal, $log, modal
       alert("Err", response.status);
     });
   };
+  $scope.loadPros = function() {
+    adminRequests.getPros().then(function(response) {
+      $scope.pros = response.data.data;
+    }, function(response) {
+      alert("Err", response.status);
+    });
+  };
   $scope.removePro = function(item) {
     adminRequests.deletePro(item._id).then(function(response) {
-      $scope.loadCases();
+      $scope.loadPros();
+    }, function(response) {
+      alert("Err", response.status);
+    });
+  };
+
+  $scope.loadStories = function() {
+    adminRequests.getStories().then(function(response) {
+      $scope.stories = response.data.data;
+    }, function(response) {
+      alert("Err", response.status);
+    });
+  };
+  $scope.removeStory = function(item) {
+    adminRequests.deleteStory(item._id).then(function(response) {
+      $scope.loadStories();
     }, function(response) {
       alert("Err", response.status);
     });
@@ -123,7 +171,7 @@ app.controller("manageCtrl", function($scope, adminRequests, $modal, $log, modal
 });
 
 var ModalInstanceCtrl = function($scope, $modalInstance, item, adminRequests, modalData) {
-  $scope.form = modalData.data || {} ;
+  $scope.form = modalData.data || {};
   $scope.submitForm = function() {
     if (modalData.type == "case") {
       adminRequests.addNewCase($scope.form).then(function() {
@@ -146,23 +194,43 @@ var ModalInstanceCtrl = function($scope, $modalInstance, item, adminRequests, mo
         alert("Err in New Case", err.status);
       });
     } else if (modalData.type == "pro") {
-      console.log($scope.form)
       adminRequests.addNewPro($scope.form).then(function() {
-        alert("Case added");
+        alert("Profile added");
         $modalInstance.close('closed');
       }, function(err) {
         alert("Err in New Case", err.status);
       });
     } else if (modalData.type == "pro-edit") {
       var data = {
-        name: $scope.form.title,
+        name: $scope.form.name,
         img: $scope.form.img,
         desc: $scope.form.desc,
         github: $scope.form.github,
         cv: $scope.form.cv
       }
       adminRequests.updatePro(modalData.data._id, data).then(function() {
-        alert("Case Updated");
+        alert("Profile Updated");
+        $modalInstance.close('closed');
+      }, function(err) {
+        alert("Err in New Case", err.status);
+      });
+    } else if (modalData.type == "stories") {
+      adminRequests.addNewStory($scope.form).then(function() {
+        alert("Story added");
+        $modalInstance.close('closed');
+      }, function(err) {
+        alert("Err in New Case", err.status);
+      });
+    } else if (modalData.type == "stories-edit") {
+      var data = {
+        title: $scope.form.title,
+        desc: $scope.form.desc,
+        type: $scope.form.type,
+        link: $scope.form.link,
+        author: $scope.form.author
+      }
+      adminRequests.updateStory(modalData.data._id, data).then(function() {
+        alert("Story Updated");
         $modalInstance.close('closed');
       }, function(err) {
         alert("Err in New Case", err.status);
@@ -170,6 +238,17 @@ var ModalInstanceCtrl = function($scope, $modalInstance, item, adminRequests, mo
     }
   };
 
+  $scope.cancel = function() {
+    $modalInstance.dismiss('cancel');
+  };
+};
+
+
+var ModalShareCtrl = function($scope, $modalInstance, item, adminRequests, modalData) {
+  $scope.form = modalData.data || {};
+  $scope.submitForm = function() {
+    $modalInstance.close('closed');
+  };
   $scope.cancel = function() {
     $modalInstance.dismiss('cancel');
   };

@@ -1,0 +1,20 @@
+<h3 class="share-header">Share Case</h3>
+<form name="form.userForm">
+  <div class="row">
+    <div class="col-md-6">
+      <a class="share" socialshare socialshare-provider="facebook" socialshare-url="{{form.url}}">
+        <i class="fa fa-facebook" aria-hidden="true"></i>
+      </a>
+      <p class="share-text">Share to Facebook</p>
+    </div>
+    <div class="col-md-6">
+      <a class="share" socialshare-text="{{form.title}}" socialshare socialshare-provider="twitter" socialshare-url="{{form.url}}">
+        <i class="fa fa-twitter" aria-hidden="true"></i>
+      </a>
+      <p class="share-text">Share to Twitter</p>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button class="btn btn-warning" ng-click="cancel()">Exit</button>
+  </div>
+</form>

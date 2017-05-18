@@ -6,7 +6,7 @@ var User = require("../models/user.js");
 var NewUser = require("../models/newUserQue.js");
 var Case = require("../models/medical-case.js");
 var Dev = require("../models/dev-pro.js");
-
+var Story = require("../models/story.js");
 
 adminRouter.get("/newusers", function(req, res) {
   NewUser.find({}, function(err, data) {
@@ -198,7 +198,58 @@ adminRouter.put("/developer-profiles/:id", function(req, res) {
 });
 
 adminRouter.delete("/developer-profiles/:id", function(req, res) {
-  Case.findOne({_id: req.params.id}, function(err, data) {
+  Dev.findOne({_id: req.params.id}, function(err, data) {
+    if(err) {
+      res.status(500).send(err);
+    } else if(data) {
+      data.remove(function(err, data) {
+        if(err) {
+          res.status(500).send(err);
+        } else {
+          res.status(200).send({"message": "Item removed", data: data});
+        }
+      })
+    } else {
+      res.status(400).send({"message": "No item with id found"});
+    }
+  });
+});
+
+
+adminRouter.post("/stories", function(req, res) {
+  var newStory = new Story(req.body);
+  newStory.save(function(err, data) {
+    if(err) {
+      res.status(500).send(err);
+    } else {
+      res.status(200).send({"message": "Data added", data: data});
+    }
+  });
+});
+
+adminRouter.put("/stories/:id", function(req, res) {
+  Story.findOne({_id: req.params.id}, function(err, data) {
+    if(err) {
+      res.status(500).send(err);
+    } else if(data) {
+      for(key in req.query) {
+        data[key] = req.query[key];
+      }
+      data.save(function(err, data) {
+        if(err) {
+          res.status(500).send(err);
+        } else {
+          res.status(200).send({"message": "Data updated", data: data});
+        }
+      });
+    } else {
+      res.status(400).send({"message": "No item with id found"});
+    }
+  });
+});
+
+adminRouter.delete("/stories/:id", function(req, res) {
+  Story.findOne({_id: req.params.id}, function(err, data) {
     if(err) {
       res.status(500).send(err);
     } else if(data) {

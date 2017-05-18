@@ -181,3 +181,26 @@ a:hover {
 .btn-warning:hover {
   background-color: #74aad8 !important;
 }
+
+.share {
+  margin-top: 20px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-size: 30px !important;
+  width: 100%;
+  margin: auto;
+  color: white !important;
+}
+
+.share-text {
+  margin-top: 30px;
+  font-size: 18px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.share-header {
+  margin-top: 30px;
+  text-align: center;
+  margin-bottom: 30px;
+}
