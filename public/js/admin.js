@@ -1,9 +1,9 @@
-var app = angular.module("app", ["ngRoute", "tokenModule"]);
+var app = angular.module("app", ["ngRoute", "tokenModule", "app.signin", "app.signup", "app.manage"]);
 
 app.config(function($locationProvider, $routeProvider) {
   $locationProvider.hashPrefix("");
   $routeProvider.when("/", {
-    redirectTo: "/home"
+    redirectTo: "/signin"
   }).otherwise({
     redirectTo: "/signin"
   });

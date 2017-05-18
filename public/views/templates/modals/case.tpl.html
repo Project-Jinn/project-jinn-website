@@ -1,0 +1,35 @@
+<div class="modal-header">
+  <h3>Add New Medical Case</h3>
+</div>
+<form name="form.userForm" ng-submit="submitForm()" novalidate>
+  <div class="modal-body">
+    <!-- Title -->
+    <div class="form-group">
+      <label>Title</label>
+      <input type="text" name="name" class="form-control" ng-model="form.title">
+    </div>
+
+    <!-- Image -->
+    <div class="form-group">
+      <label>Image</label>
+      <input type="text" name="username" class="form-control" ng-model="form.img">
+    </div>
+
+    <!-- URL -->
+    <div class="form-group">
+      <label>GoFundMe URL</label>
+      <input type="text" name="url" class="form-control" ng-model="form.url">
+    </div>
+
+    <!-- Description -->
+    <div class="form-group">
+      <label>Description</label>
+      <textarea name="email" class="form-control" ng-model="form.desc">
+      </textarea>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button type="submit" class="btn btn-primary">Submit</button>
+    <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+  </div>
+</form>
