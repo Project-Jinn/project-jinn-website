@@ -1,0 +1,147 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+      <div class="cat-box" ng-if="section == ''">
+        <h2>Manage Website</h2>
+        <button class="btn-custom-large btn btn-primary" ng-click="setSection('medical-cases')">Medical Cases</button>
+        <button class="btn-custom-large btn btn-primary" ng-click="setSection('developer-profiles')">Developer Profiles</button>
+        <button class="btn-custom-large btn btn-primary" ng-click="setSection('stories')">Stories</button>
+        <button class="btn-custom-large btn btn-primary" ng-click="setSection('new-users')">New Users</button>
+        <button class="btn-custom-large btn btn-primary" ng-click="setSection('current-users')">Current Users</button>
+      </div>
+      <div class="cat-box" ng-if="section == 'medical-cases'" ng-init="loadCases()">
+        <div class="row">
+          <div class="col-md-12">
+            <h2>Medical Cases <button class="btn btn-primary btn-custom-right" ng-click="showForm('case')"><i class="fa fa-plus" aria-hidden="true"></i></button></h2>
+          </div>
+        </div>
+        <div class="table-responsive table-users">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Title</th>
+                <th>ID</th>
+                <th>Edit</th>
+                <th>Delete</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr ng-repeat="case in cases">
+                <td class="username">{{case.title}}</td>
+                <td class="username">{{case._id}}</td>
+                <td>
+                  <button class="btn-side btn btn-warning" ng-click="showForm('case-edit', case)"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+                </td>
+                <td>
+                  <button class="btn-side btn btn-danger" ng-click="removeCase(case)"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <button class="btn-custom-large btn btn-primary back-button" ng-click="setSection('')">Back</button>
+      </div>
+      <div class="cat-box" ng-if="section == 'developer-profiles'" ng-init="loadDevs()">
+        <div class="row">
+          <div class="col-md-12">
+            <h2>Developer Profiles <button class="btn btn-primary btn-custom-right" ng-click="showForm('pro')"><i class="fa fa-plus" aria-hidden="true"></i></button></h2>
+          </div>
+        </div>
+        <div class="table-responsive table-users">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>ID</th>
+                <th>Edit</th>
+                <th>Delete</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr ng-repeat="pro in pros">
+                <td class="username">{{pro.name}}</td>
+                <td class="username">{{pro._id}}</td>
+                <td>
+                  <button class="btn-side btn btn-warning" ng-click="showForm('pro-edit', pro)"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+                </td>
+                <td>
+                  <button class="btn-side btn btn-danger" ng-click="removePro(pro)"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <button class="btn-custom-large btn btn-primary back-button" ng-click="setSection('')">Back</button>
+      </div>
+      <div class="cat-box" ng-if="section == 'new-users'" ng-init="loadNewUsers()">
+        <h2>New Users</h2>
+        <div class="table-responsive table-users">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Username</th>
+                <th>Admin</th>
+                <th>Approve</th>
+                <th>Delete</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr ng-repeat="user in newUsers">
+                <td class="username">{{user.username}}</td>
+                <td>
+                  <div class="checkbox">
+                    <label><input type="checkbox" ng-click="toggleAdminSelection(user)" ng-value="user.isAdmin">Admin</label>
+                  </div>
+                </td>
+                <td>
+                  <button class="btn-side btn btn-success" ng-click="addNewUser(user)"><i class="fa fa-check" aria-hidden="true"></i></button>
+                </td>
+                <td>
+                  <button class="btn-side btn btn-danger" ng-click="removeNewUser(user)"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <button class="btn-custom-large btn btn-primary back-button" ng-click="setSection('')">Back</button>
+      </div>
+      <div class="cat-box" ng-if="section == 'current-users'" ng-init="loadCurrentUsers()">
+        <h2>Current Users</h2>
+        <div class="table-responsive table-users">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Username</th>
+                <th>Priv</th>
+                <th>Delete</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr ng-repeat="user in currentUsers">
+                <td class="username">{{user.username}}</td>
+                <td class="username">
+                  {{user.priv}}
+                </td>
+                <td>
+                  <button class="btn-side btn btn-danger" ng-click="removeCurrentUser(user)"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <button class="btn-custom-large btn btn-primary back-button" ng-click="setSection('')">Back</button>
+      </div>
+    </div>
+  </div>
+  <div class="admin-btn-pop">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <a href="/#/home">
+            <p><i class="fa fa-home" aria-hidden="true"></i> Home</p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
