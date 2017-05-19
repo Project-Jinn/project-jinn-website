@@ -1,7 +1,7 @@
 {
   "name": "project-jinn-website",
   "version": "1.0.0",
-  "description": "Project Jinn is to help refugees who need medical attetion and help students of programming boot camps find job.",
+  "description": "Project Jinn is a project to help refugees who need medical attention and middle eastern residents who have received technical training find job.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
