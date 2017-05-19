@@ -1,10 +1,10 @@
-var app = angular.module("authModule", []);
+var app = angular.module("authModule", ["settings"]);
 
-app.service("authSerivce", function($http) {
+app.service("authSerivce", function($http, web) {
   this.signup = function(data) {
-    return $http.post("http://localhost:8080/auth/signup", data);
+    return $http.post(web.host +  "signup", data);
   }
   this.signin = function(data) {
-    return $http.post("http://localhost:8080/auth/signin", data);
+    return $http.post(web.host +  "auth/signin", data);
   }
 });
