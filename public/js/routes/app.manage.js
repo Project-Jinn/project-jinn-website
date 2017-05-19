@@ -40,17 +40,29 @@ app.controller("manageCtrl", function($scope, adminRequests, $modal, $log, modal
     });
     modalInstance.result.then(function(selectedItem) {
       if (type == "case") {
-        $scope.loadCases();
+        setTimeout(function() {
+          $scope.loadCases();
+        }, 2000);
       } else if (type == "case-edit") {
-        $scope.loadCases();
+        setTimeout(function() {
+          $scope.loadCases();
+        }, 2000);
       } else if (type == "pro") {
-        $scope.loadPros();
+        setTimeout(function() {
+          $scope.loadPros();
+        }, 2000);
       } else if (type == "pro-edit") {
-        $scope.loadPros();
+        setTimeout(function() {
+          $scope.loadPros();
+        }, 2000);
       } else if (type == "stories") {
-        $scope.loadStories();
+        setTimeout(function() {
+          $scope.loadStories();
+        }, 2000);
       } else if (type == "stories-edit") {
-        $scope.loadStories();
+        setTimeout(function() {
+          $scope.loadStories();
+        }, 2000);
       } else {
         console.log("Case not found", type);
       }
@@ -94,42 +106,62 @@ app.controller("manageCtrl", function($scope, adminRequests, $modal, $log, modal
         return item;
       });
     }, function(response) {
-      alert("Err", response.status);
+      if(response.status == 400) {
+        setTimeout(function(){
+          console.log("Err", response.status);
+          $scope.loadNewUsers();
+        }, 500);
+      }
     });
   };
   $scope.loadCurrentUsers = function() {
     adminRequests.getCurrentUsers().then(function(response) {
       $scope.currentUsers = response.data;
     }, function(response) {
-      alert("Err", response.status);
+      setTimeout(function(){
+        console.log("Err", response.status);
+        $scope.loadCurrentUsers();
+      }, 500);
     });
   };
   $scope.addNewUser = function(item) {
     adminRequests.addNewUser(item._id, item).then(function(response) {
       $scope.loadNewUsers();
     }, function(response) {
-      alert("Err", response.status);
+      setTimeout(function(){
+        console.log("Err", response.status);
+        $scope.loadNewUsers();
+      }, 500);
     });
   };
   $scope.removeNewUser = function(item) {
     adminRequests.deleteNewUser(item._id).then(function(response) {
       $scope.loadNewUsers();
     }, function(response) {
-      alert("Err", response.status);
+      setTimeout(function(){
+        console.log("Err", response.status);
+        $scope.loadNewUsers();
+      }, 500);
     });
   };
   $scope.removeCurrentUser = function(item) {
     adminRequests.deleteCurrentUser(item._id).then(function(response) {
       $scope.loadCurrentUsers();
     }, function(response) {
-      alert("Err", response.status);
+      setTimeout(function(){
+        console.log("Err", response.status);
+        $scope.loadCurrentUsers();
+      }, 500);
     });
   };
   $scope.loadCases = function() {
     adminRequests.getCases().then(function(response) {
       $scope.cases = response.data.data;
     }, function(response) {
-      alert("Err", response.status);
+      setTimeout(function(){
+        console.log("Err", response.status);
+        $scope.loadCases();
+      }, 500);
     });
   };
   $scope.removeCase = function(item) {
@@ -143,14 +175,20 @@ app.controller("manageCtrl", function($scope, adminRequests, $modal, $log, modal
     adminRequests.getPros().then(function(response) {
       $scope.pros = response.data.data;
     }, function(response) {
-      alert("Err", response.status);
+      setTimeout(function(){
+        console.log("Err", response.status);
+        $scope.loadPros();
+      }, 500);
     });
   };
   $scope.removePro = function(item) {
     adminRequests.deletePro(item._id).then(function(response) {
       $scope.loadPros();
     }, function(response) {
-      alert("Err", response.status);
+      setTimeout(function(){
+        console.log("Err", response.status);
+        $scope.loadPros();
+      }, 500);
     });
   };
 
@@ -158,14 +196,20 @@ app.controller("manageCtrl", function($scope, adminRequests, $modal, $log, modal
     adminRequests.getStories().then(function(response) {
       $scope.stories = response.data.data;
     }, function(response) {
-      alert("Err", response.status);
+      setTimeout(function(){
+        console.log("Err", response.status);
+        $scope.loadStories();
+      }, 500);
     });
   };
   $scope.removeStory = function(item) {
     adminRequests.deleteStory(item._id).then(function(response) {
       $scope.loadStories();
     }, function(response) {
-      alert("Err", response.status);
+      setTimeout(function(){
+        console.log("Err", response.status);
+        $scope.loadStories();
+      }, 500);
     });
   };
 });
@@ -243,7 +287,6 @@ var ModalInstanceCtrl = function($scope, $modalInstance, item, adminRequests, mo
     $modalInstance.dismiss('cancel');
   };
 };
-
 
 var ModalShareCtrl = function($scope, $modalInstance, item, adminRequests, modalData) {
   $scope.form = modalData.data || {};
