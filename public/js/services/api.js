@@ -1,10 +1,19 @@
-var app = angular.module("apiModule", []);
+var app = angular.module("apiModule", ["settings"]);
 
-app.service("apiRequests", function($http) {
-  this.getData = function() {
-    return $http.get("http://localhost:8080/api/");
+app.service("apiRequests", function($http, web) {
+  this.getCases = function() {
+    return $http.get(web.host + "api/medical-cases");
   };
-  this.postUpdate = function(data) {
-    return $http.post("http://localhost:8080/api/", data);
+  this.getCaseById = function(id) {
+    return $http.get(web.host + "api/medical-cases/" + id);
+  };
+  this.getPros = function() {
+    return $http.get(web.host + "api/developer-profiles");
+  };
+  this.getProById = function(id) {
+    return $http.get(web.host + "api/developer-profiles/" + id);
+  };
+  this.getStories = function() {
+    return $http.get(web.host + "api/stories");
   };
 });

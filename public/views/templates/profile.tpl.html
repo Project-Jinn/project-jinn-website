@@ -6,7 +6,7 @@
     <p>Helping one person at a time</p>
   </div>
 </div>
-<section class="container case-large">
+<section class="container case-large" ng-init="loadProfile()">
   <div class="row">
     <div class="col-md-6">
       <div class="profile-image-small" style="background: url('{{profile.img}}'); background-size: cover; background-position: center;
@@ -20,8 +20,7 @@
           </a>
         </div>
       </div>
-      <a class="more-button-large btn form-control" ng-href="mailto:{{profile.email}}">Contact</a>
-
+      <a class="more-button-large btn form-control" ng-click="showModal(profile)">Contact</a>
     </div>
     <div class="col-md-6">
       <h3 class="profile-name">{{profile.name}}</h3>

@@ -33,7 +33,6 @@ app.engine("html", require("ejs").renderFile);
 app.set("view engine", "ejs");
 
 //setup auth
-app.use("/api", expressJwt({secret: config.secret}));
 app.use("/admin", expressJwt({secret: config.secret}));
 
 //endpoints

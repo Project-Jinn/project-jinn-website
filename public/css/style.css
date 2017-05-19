@@ -342,6 +342,22 @@ hr.botm-line {
   font-size: 18px;
 }
 
+.contact-header {
+  text-align: center;
+  font-size: 23px;
+}
+
+.contact-text {
+  font-size: 18px;
+  text-align: center;
+}
+
+.contact-text-sub {
+  font-size: 14px;
+  text-align: center;
+}
+
+
 /*Stories*/
 .stories-area {
   width: 80%;

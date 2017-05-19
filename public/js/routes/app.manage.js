@@ -206,7 +206,8 @@ var ModalInstanceCtrl = function($scope, $modalInstance, item, adminRequests, mo
         img: $scope.form.img,
         desc: $scope.form.desc,
         github: $scope.form.github,
-        cv: $scope.form.cv
+        cv: $scope.form.cv,
+        email: $scope.form.email
       }
       adminRequests.updatePro(modalData.data._id, data).then(function() {
         alert("Profile Updated");

@@ -9,30 +9,16 @@ app.config(function($locationProvider, $routeProvider) {
 });
 
 app.controller("storiesCtrl", function($scope, apiRequests) {
-  $scope.stories = [
-    {
-      title: "Some test podcast",
-      type: "podcast",
-      desc: "This is a podcast on something",
-      link: "http://soundcloud.com",
-      author: "Joe",
-      date: "2017-5-04"
-    },
-    {
-      title: "Some test article",
-      type: "article",
-      desc: "This is a article on something",
-      link: "https://medium.com/",
-      author: "Ben",
-      date: "2017-6-04"
-    },
-    {
-      title: "Pictures of something",
-      type: "other",
-      desc: "This is pictures on something",
-      link: "https://imgur.com",
-      author: "Jacob",
-      date: "2017-1-04"
-    },
-  ];
+  $scope.stories = [];
+  $scope.loadStories = function() {
+    apiRequests.getStories().then(function(response) {
+      $scope.stories = response.data.data;
+      $scope.stories= $scope.stories.map(function(item) {
+        item.showDate = (new Date(item.date)).toLocaleDateString();
+        return item;
+      });
+    }, function(error) {
+      console.log("Err", error);
+    });
+  }
 });

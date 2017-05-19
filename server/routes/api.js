@@ -16,12 +16,36 @@ apiRoute.get("/medical-cases", function(req, res) {
   });
 });
 
+apiRoute.get("/medical-cases/:id", function(req, res) {
+  Case.findOne({"_id": req.params.id}, function(err, data) {
+    if(err) {
+      res.status(500).send(err);
+    } else if(data) {
+      res.status(200).send({"message": "Success", data: data});
+    } else {
+      res.status(400).send({"message": "No data with id given present"});
+    }
+  });
+});
+
 apiRoute.get("/developer-profiles", function(req, res) {
   Dev.find({}, function(err, data) {
     if(err) {
       res.status(500).send(err);
     }
     res.status(200).send({"message": "Success", data: data});
+  });
+});
+
+apiRoute.get("/developer-profiles/:id", function(req, res) {
+  Dev.findOne({"_id": req.params.id}, function(err, data) {
+    if(err) {
+      res.status(500).send(err);
+    } else if(data) {
+      res.status(200).send({"message": "Success", data: data});
+    } else {
+      res.status(400).send({"message": "No data with id given present"});
+    }
   });
 });
 

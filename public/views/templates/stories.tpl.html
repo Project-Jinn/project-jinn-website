@@ -6,7 +6,7 @@
     <p>Helping one person at a time</p>
   </div>
 </div>
-<section class="container">
+<section class="container" ng-init="loadStories()">
   <div class="stories-area">
     <div ng-repeat="story in stories | orderBy:'date':true ">
       <div class="row">
@@ -14,7 +14,7 @@
           <h3 class="story-title">{{story.title}}</h3>
           <p class="story-type">Type: <span class="type">{{story.type}}</span></p>
           <p class="story-desc">{{story.desc}}</p>
-          <p class="story-info">Posted by {{story.author}} on {{story.date}}</p>
+          <p class="story-info">Posted by {{story.author}} on {{story.showDate}}</p>
           <a target="_blank" ng-href="{{story.link}}" class="more-button btn">Check it Out</a>
           <hr>
         </div>

@@ -6,7 +6,7 @@
     <p>Helping one person at a time</p>
   </div>
 </div>
-<section class="container">
+<section class="container" ng-init="loadProfiles()">
   <div class="row">
     <div ng-repeat="profile in profiles track by $index">
       <div class="col-md-4 col-sm-6 col-sx-6">
