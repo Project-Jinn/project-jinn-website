@@ -18,7 +18,10 @@ app.controller("storiesCtrl", function($scope, apiRequests) {
         return item;
       });
     }, function(error) {
-      console.log("Err", error);
+      setTimeout(function(){
+        console.log("Err", response.status);
+        $scope.loadStories();
+      }, 500);
     });
   }
 });

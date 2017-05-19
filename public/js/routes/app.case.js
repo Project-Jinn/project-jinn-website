@@ -14,7 +14,10 @@ app.controller("caseCtrl", function($scope, apiRequests, $routeParams) {
     apiRequests.getCaseById($routeParams.id).then(function(response) {
       $scope.case = response.data.data;
     }, function(error) {
-      console.log("Err", error);
+      setTimeout(function(){
+        console.log("Err", response.status);
+        $scope.loadCase();
+      }, 500);
     });
   }
 });
