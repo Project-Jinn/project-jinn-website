@@ -11,7 +11,9 @@ section {
   overflow: hidden;
 }
 
+
 /*Header*/
+
 .header-up {
   width: 100%;
   height: 300px;
@@ -50,7 +52,9 @@ section {
   font-size: 24px;
 }
 
+
 /* Home*/
+
 .about-projects {
   margin-top: 60px;
   padding-top: 5px;
@@ -79,7 +83,8 @@ section {
   width: 90%;
   margin-left: auto;
   margin-right: auto;
-  text-align: center;;
+  text-align: center;
+  ;
   line-height: 30px;
   font-size: 18px;
 }
@@ -98,7 +103,8 @@ hr.botm-line {
 .project-box {
   padding-top: 15px;
   padding-bottom: 15px;
-  text-align: center;;
+  text-align: center;
+  ;
 }
 
 .project-box p {
@@ -150,7 +156,9 @@ hr.botm-line {
   margin-top: 20px;
 }
 
+
 /*Navbar*/
+
 #sidebar-wrapper {
   background-color: #329f7c !important;
 }
@@ -193,11 +201,14 @@ hr.botm-line {
   border-color: #329f7c;
 }
 
+
 /*Medical Cases*/
+
 .donate-box {
   border: 1px solid #ddd;
   margin-top: 30px;
   margin-bottom: 30px;
+  height: 475px;
 }
 
 .fundme-image {
@@ -216,9 +227,13 @@ hr.botm-line {
 .fundme-desc {
   text-align: center;
   padding: 5px;
+  max-height: 223px;
+  overflow-y: auto;
 }
 
+
 /*Case*/
+
 .fundme-image-large {
   width: 100%;
   height: 500px;
@@ -237,7 +252,7 @@ hr.botm-line {
 .fundme-desc-large h3 {
   text-align: center;
   font-size: 26px;
-  color:  #329f7c;
+  color: #329f7c;
 }
 
 .fundme-desc-large p {
@@ -279,7 +294,6 @@ hr.botm-line {
   padding: 7px 12px;
   font-size: 20px;
   color: white;
-
 }
 
 .share:hover {
@@ -287,11 +301,14 @@ hr.botm-line {
   color: #98cfbd;
 }
 
+
 /*Profiles*/
+
 .profile-box {
   border: 1px solid #ddd;
   margin-top: 30px;
   margin-bottom: 30px;
+  height: 475px;
 }
 
 .profile-image {
@@ -305,6 +322,8 @@ hr.botm-line {
 .profile-desc {
   text-align: center;
   padding: 5px;
+  max-height: 223px;
+  overflow-y: auto;
 }
 
 .btn-area-profile {
@@ -312,7 +331,9 @@ hr.botm-line {
   padding-bottom: 10px;
 }
 
+
 /*Profile*/
+
 .profile-image-small {
   width: 100%;
   height: 500px;
@@ -359,6 +380,7 @@ hr.botm-line {
 
 
 /*Stories*/
+
 .stories-area {
   width: 80%;
   margin-left: auto;
@@ -387,7 +409,9 @@ hr.botm-line {
   font-style: italic;
 }
 
+
 /*Footer*/
+
 footer {
   background: #555555;
   color: white;
@@ -400,7 +424,7 @@ footer {
 .footer-logo {
   margin-top: -5px;
   margin-left: -3px;
-  height:35px;
+  height: 35px;
 }
 
 footer p {
