@@ -234,17 +234,17 @@ hr.botm-line {
 
 .more-button {
   margin-top: 5px;
-  background-color: #329f7c;
-  color: white;
+  background-color: #329f7c !important;
+  color: white !important;
   text-transform: uppercase;
   font-size: 15px;
   transition: all 0.5s ease;
 }
 
 .more-button:hover {
-  background-color: white;
-  color: #329f7c;
-  border-color: #329f7c;
+  background-color: white !important;
+  color: #329f7c !important;
+  border-color: #329f7c !important;
 }
 
 
