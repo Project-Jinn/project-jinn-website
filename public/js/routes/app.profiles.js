@@ -14,7 +14,10 @@ app.controller("profilesCtrl", function($scope, apiRequests) {
     apiRequests.getPros().then(function(response) {
       $scope.profiles = response.data.data;
     }, function(error) {
-      console.log("Error", error);
+      setTimeout(function(){
+        console.log("Err", response.status);
+        $scope.loadProfiles();
+      }, 500);
     });
   }
   $scope.excerpt = function(str) {
@@ -26,3 +29,4 @@ app.controller("profilesCtrl", function($scope, apiRequests) {
     }
   };
 });
+

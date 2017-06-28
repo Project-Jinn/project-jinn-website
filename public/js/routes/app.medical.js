@@ -14,7 +14,10 @@ app.controller("medicalCtrl", function($scope, apiRequests) {
     apiRequests.getCases().then(function(response) {
       $scope.cases = response.data.data;
     }, function(error) {
-      console.log("Err", error)
+      setTimeout(function(){
+        console.log("Err", response.status);
+        $scope.loadCases();
+      }, 500);
     });
   };
   $scope.excerpt = function(str) {
@@ -26,3 +29,4 @@ app.controller("medicalCtrl", function($scope, apiRequests) {
     }
   }
 });
+

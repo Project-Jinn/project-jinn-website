@@ -25,7 +25,10 @@ app.controller("profileCtrl", function($scope, apiRequests, $routeParams, $modal
     apiRequests.getProById($routeParams.id).then(function(response) {
       $scope.profile = response.data.data;
     }, function(error) {
-      console.log("Err", error);
+      setTimeout(function(){
+        console.log("Err", response.status);
+        $scope.loadProfile();
+      }, 500);
     });
   }
   $scope.showModal = function(data) {
@@ -55,3 +58,4 @@ var ModalCtrl = function($scope, $modalInstance, item, modalData) {
     $modalInstance.dismiss('cancel');
   };
 };
+
