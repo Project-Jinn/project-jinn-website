@@ -320,7 +320,7 @@ hr.botm-line {
 .more-button-large {
   margin-top: 5px;
   background-color: #329f7c;
-  color: white;
+  color: white !important;
   text-transform: uppercase;
   font-size: 18px !important;
   transition: all 0.5s ease;
@@ -330,7 +330,7 @@ hr.botm-line {
 
 .more-button-large:hover {
   background-color: white;
-  color: #329f7c;
+  color: #329f7c !important;
   border-color: #329f7c;
 }
 
