@@ -345,7 +345,7 @@ hr.botm-line {
   left: 0;
 }
 
-.share {
+.share  a {
   display: inline-block;
   background-color: #329f7c;
   padding: 7px 12px;
@@ -353,7 +353,7 @@ hr.botm-line {
   color: white;
 }
 
-.share:hover {
+.share:hover a {
   text-decoration: none;
   color: #98cfbd;
 }
