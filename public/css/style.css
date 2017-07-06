@@ -353,12 +353,12 @@ hr.botm-line {
   color: white;
 }
 
-.share:hover a {
+.share a:hover  {
   text-decoration: none;
   color: #98cfbd;
 }
 
-.share:visited a {
+.share a:visited  {
   text-decoration: none;
   color: white;
 }
