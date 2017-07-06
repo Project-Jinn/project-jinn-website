@@ -345,7 +345,7 @@ hr.botm-line {
   left: 0;
 }
 
-.share  a {
+.share  {
   display: inline-block;
   background-color: #329f7c;
   padding: 7px 12px;
@@ -356,6 +356,11 @@ hr.botm-line {
 .share:hover a {
   text-decoration: none;
   color: #98cfbd;
+}
+
+.share:visited a {
+  text-decoration: none;
+  color: white;
 }
 
 
